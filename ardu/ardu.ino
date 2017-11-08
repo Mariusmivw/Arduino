@@ -12,17 +12,17 @@ void setup(){
 
 void loop() {
   //loop
-  //int val = lineFinder.readSensors();
-  int val = ultraSensor.distanceCm();
-  Serial.println(val);
-  /*switch(val)
+  int val = lineFinder.readSensors();
+  //int val = ultraSensor.distanceCm();
+  Serial.println(val); // l + r = 2 + 1
+  switch(val)
   {
-    case S1_IN_S2_IN: Serial.println("Sensor 1 and 2 are inside of black line"); break; motor1.
-    case S1_IN_S2_OUT: Serial.println("Sensor 2 is outside of black line"); break;
-    case S1_OUT_S2_IN: Serial.println("Sensor 1 is outside of black line"); break;
-    case S1_OUT_S2_OUT: Serial.println("Sensor 1 and 2 are outside of black line"); break;
+    case 0: Serial.println("Sensor 1 and 2 are inside of black line"); break; motor1.
+    case 1: Serial.println("Sensor 2 is outside of black line"); break;
+    case 2: Serial.println("Sensor 1 is outside of black line"); break;
+    case 3: Serial.println("Sensor 1 and 2 are outside of black line"); break;
     default: break;
-  }*/
+  }
   delay(200);
 }
 
