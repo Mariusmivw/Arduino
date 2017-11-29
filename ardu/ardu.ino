@@ -8,9 +8,6 @@ MeDCMotor motor2(M2); //right
 int fastness1 = -190;
 int fastness2 = -fastness1;
 int t;
-int checkstart = 1;
-int start;
-int timetorun;
 
 void setup(){
   Serial.begin(9600);
@@ -19,7 +16,7 @@ void setup(){
 void loop() {
   //loop
   int val = lineFinder.readSensors();
-  
+
   //int val = ultraSensor.distanceCm();
   //Serial.println(val); // l + r = 2 + 1
   if (val == 0){
@@ -46,14 +43,11 @@ void loop() {
       // naar links
       motor1.run(0);
       motor2.run(fastness2);
-      checkstart = 1;
     }
     else{
       // naar rechts
-      checkstart = 1;
       motor1.run(fastness1);
       motor2.run(0);
     }
   }
 }
-
