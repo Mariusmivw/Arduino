@@ -1,4 +1,3 @@
-// door Marius
 #include "MeMCore.h"
 
 MeUltrasonicSensor ultraSensor(PORT_3);
