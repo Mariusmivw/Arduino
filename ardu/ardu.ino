@@ -13,11 +13,8 @@ void setup(){
 }
 
 void loop() {
-  //loop
   int val = lineFinder.readSensors();
 
-  //int val = ultraSensor.distanceCm();
-  //Serial.println(val); // l + r = 2 + 1
   if (val == 0){
     Serial.println("Sensor 1 and 2 are inside of black line");
     t = 0;
