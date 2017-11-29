@@ -8,6 +8,9 @@ MeDCMotor motor2(M2); //right
 int fastness1 = -190;
 int fastness2 = -fastness1;
 int t;
+int checkstart = 1;
+int start;
+int timetorun;
 
 void setup(){
   Serial.begin(9600);
@@ -39,18 +42,15 @@ void loop() {
   }
   else{
     Serial.println("Sensor 1 and 2 are outside of black line");
-    if (t == 0 | t == 3){
-      t = 3;
-      motor1.run(-fastness1/2);
-      motor2.run(-fastness2/2);
-    }
-    else if (t == 1){
+    if (t == 1){
       // naar links
       motor1.run(0);
       motor2.run(fastness2);
+      checkstart = 1;
     }
     else{
       // naar rechts
+      checkstart = 1;
       motor1.run(fastness1);
       motor2.run(0);
     }
